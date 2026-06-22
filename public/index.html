@@ -52,34 +52,33 @@
         <section>
             <h2>Agende seu serviço</h2>
 
-            <form>
+            <form action="/agendar" method="POST">
                 <label for="nome">Nome:</label>
-                <input type="text" id="nome" required>
+                <input type="text" id="nome" name="nome" required>
 
                 <label for="telefone">Telefone:</label>
-                <input type="text" id="telefone" required>
+                <input type="text" id="telefone" name="telefone" required>
 
                 <label for="email">Email:</label>
-                <input type="text" id="email" required>
+                <input type="text" id="email" name="email" required>
 
                 <label for="serviço">Serviço:</label>
 
-                <select id="serviço"required>
+                <select id="serviço" name="servico" required>
                     <option value="">Selecione um serviço
                     <option value="simples">Lavagem Simples</option>
                     <option value="completa">Lavagem Completa</option>
                     <option value="motor">Lavagem de motor</option>
-
+                </select>
                     <label for="data">Data:</label>
-                    <input type="date" id="data" required>
+                    <input type="date" id="data" name="data" required>
 
                     <label for="horario">Hora:</label>
-                    <input type="time" id="horario" required>
+                    <input type="time" id="horario" name="horario" required>
 
                     <button type="submit">
                         Agendar Serviço
                     </button>
-                </select>
             </form>
         </section>
     </main>
