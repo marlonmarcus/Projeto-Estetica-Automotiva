@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marlon Estética</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header> 
+        <h1>Marlon Estética Automotiva</h1>
+        <nav>
+            <a href="#">Início</a>
+            <a href="#">Serviços</a>
+            <a href="#">Agendamento</a>
+            <a href="#">Contato</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Lavagem Automotiva de Auto Brilho</h2>
+            <p>Seu carro limpo com a máxima eficiência e atendimento rápido.
+                Produtos de qualidade e com longa durabilidade.
+            </p>
+
+            <button>Agendar Serviço</button>
+        </section>
+
+        <section>
+            <h2>Meus serviços</h2>
+
+            <div>
+                <h3>Lavagem Simples</h3>
+                <p>Aspiração interna com pano úmido e lavagem simples na externa.
+                    <br>*A partir* de R$35,00</p>
+            </div>
+
+            <div>
+                <h3>Lavagem Completa</h3>
+                <p>Aspiração na interna com restauração dos plásticos internos e Lavagem externa com aplicação de cera e restauração dos plásticos externos.
+                    <br>*A partir* de R$50,00</p>
+            </div>
+
+            <div>
+                <h3>Lavagem de motor</h3>
+                <p>Lavagem técnica de motor e proteção aos plásticos e componentes elétricos.
+                    <br>*A partir* de R$50,00
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Agende seu serviço</h2>
+
+            <form>
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" required>
+
+                <label for="telefone">Telefone:</label>
+                <input type="text" id="telefone" required>
+
+                <label for="email">Email:</label>
+                <input type="text" id="email" required>
+
+                <label for="serviço">Serviço:</label>
+
+                <select id="serviço"required>
+                    <option value="">Selecione um serviço
+                    <option value="simples">Lavagem Simples</option>
+                    <option value="completa">Lavagem Completa</option>
+                    <option value="motor">Lavagem de motor</option>
+
+                    <label for="data">Data:</label>
+                    <input type="date" id="data" required>
+
+                    <label for="horario">Hora:</label>
+                    <input type="time" id="horario" required>
+
+                    <button type="submit">
+                        Agendar Serviço
+                    </button>
+                </select>
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>
