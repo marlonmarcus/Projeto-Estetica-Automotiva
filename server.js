@@ -2,6 +2,8 @@ const express = require("express");
 
 const path = require("path");
 
+const db = require("./database");
+
 const app = express();
 app.use(express.urlencoded ({ extended: true}));
 
@@ -15,9 +17,43 @@ app.get("/", (req,res) => {
 
 // FAZENDO AGENDAMENTO
 app.post("/agendar", (req, res)=>{
-    console.log(req.body);
+    
+    const { nome, telefone, email, servico, data, horario} = req.body;
 
-    res.send("Agendamento recebido com sucesso!");
+        db.run(
+            `INSERT INTO agendamentos
+            (nome, telefone, email, servico, data, horario)
+            VALUES (?, ?, ?, ?, ?, ?)
+            `,
+            [nome, telefone, email, servico, data, horario],
+            (err) => {
+                if (err) {
+                    console.error(err);
+                    return res.send("Erro ao salvar o agendamento, tente novamente.");
+                }
+
+                res.send("Agendamento salvo com sucesso!");
+                }
+                
+        );
+});
+
+
+app.get("/agendamentos", (req, res) => {
+    
+    db.all(
+        "SELECT * FROM agendamentos",
+        [],
+        (err, rows) => {
+            
+             if (err) {
+                console.error(err);
+                return res.send("Erro ao buscar agendamentos.");
+             }
+             res.json(rows);
+
+        }
+    );
 });
 
 //CONFIRMAÇÃO DO SERVIDOR RODANDO
