@@ -7,8 +7,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header> 
-        <h1>Marlon Estética Automotiva</h1>
+    <header>
+        <section class="hero">
+            <h1>Marlon Estética Automotiva</h1> 
+            <P>
+                Tratamento de qualidade que seu veículo merece!
+            </P>
+
+            <a href="#agendamento" class="btn">Agendar Serviço</a>
+        </section> 
+       
         <nav>
             <a href="#">Início</a>
             <a href="#">Serviços</a>
@@ -17,33 +25,57 @@
         </nav>
     </header>
     <main>
-        <section>
+        <section class="img">
             <h2>Lavagem Automotiva de Auto Brilho</h2>
             <p>Seu carro limpo com a máxima eficiência e atendimento rápido.
                 Produtos de qualidade e com longa durabilidade.
             </p>
 
-            <button>Agendar Serviço</button>
         </section>
 
-        <section>
+        <section class="vantagens">
+
+        <h2>Por que escolher o meu lava-jato?</h2>
+
+        <div class="vantagens-container">
+
+            <div class="vantagem">
+                <h3>⚡ Atendimento Rápido</h3>
+                <p>Seu veículo limpo no menor tempo possível.</p>
+            </div>
+
+            <div class="vantagem">
+                <h3>🧴 Produtos de Qualidade</h3>
+                <p>Utilizamos produtos profissionais para proteger a pintura.</p>
+            </div>
+
+            <div class="vantagem">
+                <h3>💰 Preço Justo</h3>
+                <p>Qualidade e transparência em todos os serviços.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+        <section class="servicos">
             <h2>Meus serviços</h2>
 
-            <div>
-                <h3>Lavagem Simples</h3>
+            <div class="card">
+                <h3>🧽 Lavagem Simples</h3>
                 <p>Aspiração interna com pano úmido e lavagem simples na externa.
                     <br>*A partir* de R$35,00</p>
             </div>
 
-            <div>
-                <h3>Lavagem Completa</h3>
+            <div class="card">
+                <h3>🚗 Lavagem Completa</h3>
                 <p>Aspiração na interna com restauração dos plásticos internos e Lavagem externa com aplicação de cera e restauração dos plásticos externos.
                     <br>*A partir* de R$50,00</p>
             </div>
 
-            <div>
-                <h3>Lavagem de motor</h3>
-                <p>Lavagem técnica de motor e proteção aos plásticos e componentes elétricos.
+            <div class="card">
+                <h3>🛞 Lavagem de motor</h3>
+                <p>Lavagem técnica e segura de motor e proteção aos plásticos e componentes elétricos.
                     <br>*A partir* de R$50,00
                 </p>
             </div>
@@ -52,7 +84,7 @@
         <section>
             <h2>Agende seu serviço</h2>
 
-            <form action="/agendar" method="POST">
+            <form action="/agendar" method="POST" onsubmit="return confirm('O preço final pode variar conforme o porte do veículo e o nível da sujeira. Deseja continuar?')">
                 <label for="nome">Nome:</label>
                 <input type="text" id="nome" name="nome" required>
 
