@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const express = require("express");
 
 const path = require("path");
@@ -6,6 +8,8 @@ const db = require("./database");
 
 const app = express();
 app.use(express.urlencoded ({ extended: true}));
+
+const transporter = require("./email");
 
 //FAZENDO APARECER O CSS
 app.use(express.static("public"));
@@ -285,6 +289,8 @@ app.post("/atualizar/:id", (req, res) => {
         }
     );
 });
+
+
 
 //CONFIRMAÇÃO DO SERVIDOR RODANDO
 app.listen(3000, () => {

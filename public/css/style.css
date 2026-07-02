@@ -1,5 +1,15 @@
 @charset "UTF-8";
 
+section{
+    scroll-margin-top: 90px;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
 header {
     background-color: aqua;
     padding: 20px;
@@ -13,13 +23,13 @@ header {
 }
 
 .hero h1{
-    font-size: 3rem;
+    font-size: 2.2rem;
     margin-bottom: 20px;
 
 }
 
 .hero p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin-bottom: 30px;
 }
 
@@ -40,14 +50,17 @@ header {
 }
 
 nav{
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    width: 100%;
     z-index: 1000;
     background: #00d9e6;
     display: flex;
     justify-content: center;
-    gap: 40px;
-    padding: 18px;
+    gap: 30px;
+    padding: 20px;
+    flex-wrap: wrap;
 }
 
 nav a {
@@ -56,13 +69,17 @@ nav a {
     font-size: 18px;
     font-weight: bold;
     transition: .3s;
+}
 
+nav a:hover {
+    color: #002855;
 }
 
 .banner-carro{
     position: relative;
     margin: 70px auto;
     width: 90%;
+    height: auto;
     max-width: 1200px;
     border-radius: 15px;
     overflow: hidden;
@@ -95,7 +112,7 @@ nav a {
 .texto-banner h2{
     font-size:1.8rem;
     margin-bottom:20px;
-
+    
 }
 
 .vantagens{
@@ -122,10 +139,24 @@ nav a {
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,.1);
     transition: .3s;
+    overflow: hidden;
 }
 
 .vantagem:hover{
     transform: translateY(-6px);
+}
+
+.vantagem img {
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:10px;
+    margin-bottom:18px;
+    transition:.4s;
+}
+
+.vantagem:hover img{
+    transform: scale(1.05);
 }
 
 .servicos {
@@ -148,8 +179,129 @@ nav a {
     padding: 25px;
     box-shadow: 0 5px 15px rgba(0,0,0,.1);
     transition: .3s;
+    overflow: hidden;
 }
 
 .card:hover{
     transform: translateY(-8px);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:10px;
+    margin-bottom:18px;
+    transition:.4s;
+
+}
+
+.card:hover img{
+    transform:scale(1.05);
+
+}
+
+#agendamento{
+    background: #f5f5f5;
+    padding: 80px 20px;
+
+}
+
+.container-agendamento{
+    max-width:700px;
+    margin:auto;
+    background:white;
+    padding:40px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+}
+
+form{
+    width: 90%;
+    margin: auto;
+    display:flex;
+    flex-direction:column;
+    gap: 18px;
+
+}
+
+label{
+    font-weight:bold;
+    margin-bottom:5px;
+
+}
+
+
+input,
+select{
+    width: 100%;
+    box-sizing: border-box;
+    padding:15px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    font-size:16px;
+    transition:.3s;
+}
+
+input:focus,
+select:focus{
+    outline:none;
+    border-color:#2563eb;
+    box-shadow:0 0 10px rgba(37,99,235,.2);
+
+}
+
+.horarios{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:15px;
+
+}
+
+.horario:hover{
+    background:#2563eb;
+    color:white;
+}
+
+.horario.ativo{
+    background:#0d2352;
+    color:white;
+
+}
+
+button{
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:16px;
+    border-radius:8px;
+    font-size:18px;
+    cursor:pointer;
+    transition:.3s;
+
+}
+
+button:hover{
+    background:#1d4ed8;
+    transform:translateY(-2px);
+
+}
+
+.contato {
+    background: #00d9e6;
+    flex-wrap: wrap;
+    text-align: center;
+    width: 250px;
+    gap: 30px;
+
+}
+
+/* ===========================
+   RESPONSIVIDADE - CELULAR
+=========================== */
+
+@media (max-width: 768px){
+
 }

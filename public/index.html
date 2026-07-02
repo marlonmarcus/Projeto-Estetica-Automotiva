@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marlon Estética</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
@@ -33,7 +33,7 @@
                     </p>
                 </div>
                 
-                <img src="imagens/etios.HEIC" alt="carro-qualidade">
+                <img src="imagens/etios.jpg" alt="carro-qualidade">
             </section>
 
             <section class="vantagens">
@@ -43,16 +43,20 @@
             <div class="vantagens-container">
 
                 <div class="vantagem">
+
+                    <img src="imagens/clio.jpg" alt="">
                     <h3>⚡ Atendimento Rápido</h3>
                     <p>Seu veículo limpo no menor tempo possível.</p>
                 </div>
 
                 <div class="vantagem">
+                    <img src="imagens/produto.jpg" alt="">
                     <h3>🧴 Produtos de Qualidade</h3>
                     <p>Utilizamos produtos profissionais para proteger a pintura.</p>
                 </div>
 
                 <div class="vantagem">
+                    <img src="imagens/eclipseCross.jpg" alt="">
                     <h3>💰 Preço Justo</h3>
                     <p>Qualidade e transparência em todos os serviços.</p>
                 </div>
@@ -64,21 +68,33 @@
                 <h2>Meus serviços</h2>
             <div class="cards">
                 <div class="card">
+                    <img src="imagens/ix35.jpg" alt="">
                     <h3>🧽 Lavagem Simples</h3>
-                    <p>Aspiração interna com pano úmido e lavagem simples na externa.
-                        <br>*A partir* de R$35,00</p>
+                    <p>
+                        Aspiração interna com pano úmido e lavagem simples na externa.
+                        <br>
+                        <strong>A partir de R$35,00</strong>
+                    </p>
                 </div>
 
                 <div class="card">
+                    <img src="imagens/civicverm2.jpg" alt="">
                     <h3>🚗 Lavagem Completa</h3>
-                    <p>Aspiração na interna com restauração dos plásticos internos e Lavagem externa com aplicação de cera e restauração dos plásticos externos.
-                        <br>*A partir* de R$50,00</p>
+                    <p>
+                        Aspiração na interna com restauração dos plásticos internos e Lavagem externa com aplicação de cera e restauração dos plásticos externos.
+                        <br>
+                        <strong>A partir de R$50,00</strong>
+                    </p>
                 </div>
 
                 <div class="card">
+                    <img src="imagens/motor-palio.jpg" alt="">
+
                     <h3>🛞 Lavagem de motor</h3>
-                    <p>Lavagem técnica e segura de motor e proteção aos plásticos e componentes elétricos.
-                        <br>*A partir* de R$50,00
+                    <p>
+                        Lavagem técnica e segura de motor e proteção aos plásticos e componentes elétricos.
+                        <br>
+                        <strong>A partir de R$50,00</strong>
                     </p>
                 </div>
             </div>
@@ -87,65 +103,70 @@
 
     
             <section id="agendamento">
-                <h2>Agende seu serviço</h2>
+                <div class="container-agendamento">
+                    <h2>Agende seu serviço</h2>
 
-                <form action="/agendar" method="POST" onsubmit="return confirm('O preço final pode variar conforme o porte do veículo e o nível da sujeira. Deseja continuar?')">
-                    <label for="nome">Nome:</label>
-                    <input type="text" id="nome" name="nome" required>
+                    <form action="/agendar" method="POST" onsubmit="return confirm('O preço final pode variar conforme o porte do veículo e o nível da sujeira. Deseja continuar?')">
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" required>
 
-                    <label for="telefone">Telefone:</label>
-                    <input type="text" id="telefone" name="telefone" required>
+                        <label for="telefone">Telefone:</label>
+                        <input type="text" id="telefone" name="telefone" required>
 
-                    <label for="email">Email:</label>
-                    <input type="text" id="email" name="email" required>
+                        <label for="email">Email:</label>
+                        <input type="text" id="email" name="email" required>
 
-                    <label for="serviço">Serviço:</label>
+                        <label for="serviço">Serviço:</label>
 
-                    <select id="serviço" name="servico" required>
-                        <option value="">Selecione um serviço
-                        <option value="simples">Lavagem Simples</option>
-                        <option value="completa">Lavagem Completa</option>
-                        <option value="motor">Lavagem de motor</option>
-                    </select>
-                        <label for="data">Data:</label>
-                        <input type="date" id="data" name="data" required>
+                        <select id="serviço" name="servico" required>
+                            <option value="">Selecione um serviço
+                            <option value="simples">Lavagem Simples</option>
+                            <option value="completa">Lavagem Completa</option>
+                            <option value="motor">Lavagem de motor</option>
+                        </select>
+                            <label for="data">Data:</label>
+                            <input type="date" id="data" name="data" required>
 
-                        <label for="horario">Hora:</label>
-                        <input type="time" id="horario" name="horario" required>
+                            <label>Escolha um horário:</label>
 
-                        <button type="submit">
-                            Agendar Serviço
-                        </button>
-                </form>
+                            <div class="horarios">
+
+                                <button type="button" class="horario">08:00</button>
+                                <button type="button" class="horario">08:30</button>
+                                <button type="button" class="horario">09:00</button>
+                                <button type="button" class="horario">09:30</button>
+
+                                <button type="button" class="horario">10:00</button>
+                                <button type="button" class="horario">10:30</button>
+                                <button type="button" class="horario">11:00</button>
+                                <button type="button" class="horario">11:30</button>
+
+                                <button type="button" class="horario">13:00</button>
+                                <button type="button" class="horario">13:30</button>
+                                <button type="button" class="horario">14:00</button>
+                                <button type="button" class="horario">14:30</button>
+
+                            </div>
+
+                            <input
+                                type="hidden"
+                                id="horario"
+                                name="horario"
+                                required
+                            >
+                            <button type="submit">
+                                Agendar Serviço
+                            </button>
+                    </form>
+                </div>
             </section>
         </main>
         <section id="contato">
         <h2>Contato</h2>
-        <p>📞 (71) 99999-9999</p>
+        <p>📞 (71) 99681-3219</p>
         <p>📍 Salvador - BA</p>
     </section>
-<script>
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-
-    link.addEventListener('click', function(e){
-
-        e.preventDefault();
-
-        const destino = document.querySelector(this.getAttribute('href'));
-
-        if(destino){
-
-            destino.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
-
-        }
-
-    });
-
-});
-</script>
+<script src="js/script.js"></script>
 </body>
 
 </html>
