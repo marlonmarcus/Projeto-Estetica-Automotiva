@@ -1,5 +1,7 @@
 require("dotenv").config();
 
+const transporter = require("./email");
+
 const express = require("express");
 
 const path = require("path");
@@ -9,7 +11,7 @@ const db = require("./database");
 const app = express();
 app.use(express.urlencoded ({ extended: true}));
 
-const transporter = require("./email");
+
 
 //FAZENDO APARECER O CSS
 app.use(express.static("public"));
@@ -51,8 +53,45 @@ db.get(
                         console.error(err);
                         return res.send("Erro ao salvar o agendamento, tente novamente.");
                     }
+                transporter.sendMail({
+
+                    from: process.env.EMAIL_USER,
+
+                    to: process.env.EMAIL_USER,
+
+                    subject: "Novo agendamento!",
+
+                    html: `
+                        <h2>🚗 Novo Agendamento</h2>
+
+                        <p><strong>Nome:</strong> ${nome}</p>
+
+                        <p><strong>Telefone:</strong> ${telefone}</p>
+
+                        <p><strong>Email:</strong> ${email}</p>
+
+                        <p><strong>Serviço:</strong> ${servico}</p>
+
+                        <p><strong>Data:</strong> ${data}</p>
+
+                        <p><strong>Horário:</strong> ${horario}</p>
+                    `
+
+        })
+                .then(() => {
 
                     res.send("Agendamento salvo com sucesso!");
+
+        })
+                .catch((erro) => {
+
+                    console.error(erro);
+
+                    res.send("Agendamento salvo, mas ocorreu um erro ao enviar o e-mail.");
+
+});
+
+res.send("Agendamento salvo com sucesso!");
                     }
                     
             );
@@ -289,7 +328,6 @@ app.post("/atualizar/:id", (req, res) => {
         }
     );
 });
-
 
 
 //CONFIRMAÇÃO DO SERVIDOR RODANDO
